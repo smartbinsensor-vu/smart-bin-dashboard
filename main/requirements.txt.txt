@@ -1,0 +1,9 @@
+dash
+dash-bootstrap-components
+dash-leaflet
+pandas
+sqlalchemy
+pymysql
+plotly
+gunicorn
+python-dotenv
