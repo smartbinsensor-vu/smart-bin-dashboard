@@ -15,6 +15,9 @@ app = Dash(
 )
 app.title = "Smart Bin Dashboard"
 
+#Run server on Render
+server = app.server
+
 #App layout
 def serve_layout():
     return html.Div([
