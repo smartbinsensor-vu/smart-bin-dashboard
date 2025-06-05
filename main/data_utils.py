@@ -1,13 +1,14 @@
 import pandas as pd
 from sqlalchemy import create_engine
 from datetime import datetime, timedelta
+import os
 
 #MySQL credentials
-username = 'admin'
-password = '2025BinSensors'
-host = 'smart-bin-sensors.cf2w6okcuabo.ap-southeast-2.rds.amazonaws.com'
-port = '3306'
-database = 'smart-bin-sensors'
+username = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+host = os.getenv('DB_HOST')
+port = os.getenv('DB_PORT', '3306')  # default to 3306 if not set
+database = os.getenv('DB_NAME')
 
 #Create connection to the MySQL engine
 engine = create_engine(
