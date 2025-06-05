@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+	background-color: #F4F6F8 !important; /* very light grey */
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	font-family: 'Public Sans', sans-serif;
+}
+
+
+/* Hide the text labels when sidebar is collapsed */
+/* Hides the sidebar text when collapsed */
+.sidebar.collapsed .link-text,
+.sidebar.collapsed .sidebar-header {
+	display: none;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color:#FFFFFF; /* white nav link text */
+	font-size: 0.9rem;
+	margin-top: 0.5rem; /* Space between nav items */
+}
+
+.nav-item i {
+	font-size: 1.1rem; /* Nav Icon size */
+}
+
+/* Change colour when hovering over links */
+.nav-item:hover {
+	color: #B08EC4;
+	background-color: #62308C;
+}
+
+/* Change colour for Active links */
+.nav-item.active {
+	color: #B08EC4 !important;
+	background-color: #62308C !important;
+}
+
+/* Prevent color change on focus (like click and dragging) */
+.sidebar a,
+.sidebar a:visited,
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active {
+	outline: none !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+
+	--bs-link-color: #ffffff !important; /* Override Bootstrap link color */
+	--bs-link-hover-color: #B08EC4 !important; /* Override Bootstrap link hover color */
+	--bs-nav-link-hover-color: #B08EC4 !important; /* Override Bootstrap nav link hover color */
+	--bs-nav-link-active-color: #B08EC4 !important; /* Override Bootstrap nav link active color */
+	--bs-nav-link-hover-color: #B08EC4 !important; /* Override Bootstrap nav link hover color */
+}
+
+/* Make sidebar-top elements stack vertically */
+.sidebar-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+/* Style for the sidebar collapse button */
+.sidebar-collapse-btn {
+	color: #B08EC4;
+	border: 1px solid #B08EC4;
+	background-color: transparent;
+	border-radius: 10px; /* Rounded corners */
+	padding: 0.25rem 0.45rem;
+}
+
+.sidebar-collapse-btn:hover {
+	background-color: #62308C;
+}
+
+/* Align collapse toggle button when expanded sidebar */
+.toggle-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	transition: justify-content 0.3s;
+	width: 100%;
+}
+
+/* Align collapse toggle button when collapsed */
+.sidebar.collapsed .toggle-wrapper {
+	justify-content: center;
+}
+
+/* Style for the sub-links under Bins submenu */
+.sub-link {
+	display: flex;
+	width: 100%;
+	padding: 0.3rem 0rem;
+	color: #ffffff;
+	font-size: 0.8rem;
+	text-decoration: none !important;
+}
+
+/* Change colour of Active Bins link to override default theme*/
+#bins-toggle:hover .link-text, 
+#bins-toggle:focus .link-text {
+	color: #B08EC4 !important;
+}
+
+#bins-toggle:hover .caret-icon,
+#bins-toggle:focus .caret-icon {
+	color: #B08EC4 !important;
+}
+
+/* Disable bg hover colour upon clicking on Bins nav link */
+#bins-toggle:focus {
+	color: #B08EC4 !important;
+	background-color: transparent !important;
+}
+
+#bins-toggle:hover {
+	color: #B08EC4 !important;
+	background-color: #62308C !important;
+}
+
+#bins-toggle.active .link-text{
+	color: inherit !important;
+	background-color: transparent !important;
+}
+
+#bins-toggle.active .bi.caret-down-fill {
+	color: #FFFFFF !important;
+}
+
+#bins-toggle.active {
+	color: #FFFFFF !important;
+	background-color: transparent !important;
+}
+
+/* Slide animation for when Bins are expanded */
+.slide-toggle {
+	transition: max-height 0.3s ease-in-out;
+	overflow: hidden;
+	max-height: 0;
+}
+
+/* Show the slide toggle when bins expanded */
+.slide-toggle.open {
+	max-height: 150px; 
+}
+
+/* Bins submenu toggle icon rotation */
+.caret-icon {
+	transition: transform 0.3s ease-in-out;
+}
+
+.caret-icon.rotate {
+	transform: rotate(180deg);
+}
+
+.caret-icon.rotate-right {
+	transform: rotate(-90deg);
+	transition: transform 0.1s ease-in-out;
+}
+
+/* Show caret icon next to Bins icon even when sidebar collapsed */
+.sidebar.collapsed .caret-icon {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: 0.5rem;
+}
+
+
+.floating-bins-menu.show {
+    display: block;
+}
+
+/* Hover effect on card rows */
+.hoverable-row:hover {
+    background-color: #F4F6F8; /* very light grey */
+    cursor: pointer;
+}
+
+/*Background colour for alternating table-like rows in Bins Last Emptied card */
+.custom-bg-alternate {
+	background-color: #F1EEF7; /*very light purple */
+}
+
+/* Card title colour */
+.card-title {
+	color: #3B3B3B !important; /* or purple #42205E */
+}
+
+/* Card title hover active links colour */
+.card-title a:hover {
+	color:#B08EC4 !important;
+}
+
+/* Address search dropdown options */
+.address-search-dropdown-small .Select--single > .Select-control .Select-value, /* selected option */
+.address-search-dropdown-small .Select-menu-outer, /* dropdown menu */
+.address-search-dropdown-small .Select-option { /* individual options */
+	font-size: 12px !important;
+	min-height: 30px !important;
+	line-height: 1.2 !important;
+	padding: 4px 6px;
+	
+}
+
+/* Create custom purple hover buttons for cards */
+.custom-purple-button {
+    color: #683394 !important;
+    border-color: #683394 !important;
+}
+
+.custom-purple-button:hover {
+    background-color: #683394 !important;
+    color: white !important;
+}
+
+
+
+
+
+
+/****************** DATA TABLES ********************/
+/***************************************************/
+
+/* dbc theme hides the dropdown menu in DataTables, so override settings here */
+.dash-spreadsheet .Select-menu-outer {
+    z-index: 9999 !important;
+    position: absolute !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.dash-dropdown-cell-value-container {
+    overflow: visible !important;
+}
+
+
